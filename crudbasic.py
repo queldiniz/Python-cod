@@ -9,8 +9,6 @@ conexao =mysql.connector.connect(
 #2º criando o cursor que vai executar os comandos da conexao
 cursor = conexao.cursor()
 
-#4º CRUD
-
 
 #CREATE
 nome_produto = "manga" #basta ir mudando aqui para colocar lá no banco de dados
