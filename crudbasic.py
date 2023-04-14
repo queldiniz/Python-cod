@@ -1,5 +1,5 @@
 import mysql.connector
-# 1º com a tabela criada no mysql e campos definidos, crie uma var para a conexao
+# 1º com a tabela criada no mysql e campos definidos
 conexao =mysql.connector.connect(
     host='localhost',
     user='root',
@@ -11,12 +11,12 @@ cursor = conexao.cursor()
 
 
 #CREATE
-nome_produto = "manga" #basta ir mudando aqui para colocar lá no banco de dados
+nome_produto = "manga" 
 valor = 10
-comando = f'INSERT INTO vendas(nome_produto, valor) VALUES("{nome_produto}", {valor})' #aqui é onde escrevo o comando sql a ser executado
+comando = f'INSERT INTO vendas(nome_produto, valor) VALUES("{nome_produto}", {valor})' 
 cursor.execute(comando) #mando o comando ser executado
 conexao.commit() #editando o banco de dados criado
-#resultado = cursor.fetchall() #armazenar informações no cursor e LER
+
 
 #READ
 comando = f'SELECT * FROM vendas';
@@ -32,7 +32,7 @@ comando = f'UPDATE vendas SET valor = {valor} WHERE nome_produto = "{nome_produt
 cursor.execute(comando) #mando o comando ser executado
 conexao.commit()
 
-#DELETE - NÃO PRECISA SETAR UM VALOR PARA EXCLUIR, pode ser id, nome_produto, valor
+#DELETE 
 nome_produto = "manga"
 comando = f'DELETE FROM vendas WHERE nome_produto = "{nome_produto}"';
 cursor.execute(comando) #mando o comando ser executado
